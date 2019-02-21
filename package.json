@@ -1,0 +1,45 @@
+{
+	"name": "gxc-to-the-moon",
+	"displayName": "GXC to the moon",
+	"description": "Has GXC already landed on the moon?",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"icon": "icon.png",
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.GXCToTheMoon",
+				"title": "Has GXC already landed on the moon?"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.2",
+		"superagent": "^4.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yrming/has-gxc-already-landed-on-the-moon"
+	},
+	"publisher": "YRM"
+}
