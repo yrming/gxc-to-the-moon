@@ -9,10 +9,10 @@ function activate(context) {
     statusBar.tooltip = 'Has GXC already landed on the moon?';
     statusBar.show();
     let disposable = vscode.commands.registerCommand('extension.GXCToTheMoon', function () {
-        const url = 'https://m.feixiaohao.com/search?word=%E5%85%AC%E4%BF%A1%E5%AE%9D';
+        const url = 'https://m.feixiaohao.com/currencies/gxshares/';
         superagent.get(url).end((err, res) => {
             let $ = cheerio.load(res.text);
-            let price = $('td:nth-child(4)').text();
+            let price = $('.price').text();
             if (price && Number(price) >= 500) {
                 vscode.window.showInformationMessage('GXC, you\'ve really made the grade!');
             } else {
